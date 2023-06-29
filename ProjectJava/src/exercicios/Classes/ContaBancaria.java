@@ -1,7 +1,9 @@
 package exercicios.Classes;
 import java.util.Scanner;
 
+
 public class ContaBancaria {	
+	
 	
 		private int numero;
 		private double saldo;
@@ -15,8 +17,10 @@ public class ContaBancaria {
 		
 		
 		private void depositar(double valor) {
-		saldo += valor;
-	}
+		System.out.println("Qual valor gostaria de depositar?");
+	    valor = input.nextDouble();
+		saldo+=valor;
+		}
 		
 	    private void sacar(double valor) {
 
@@ -52,6 +56,8 @@ public class ContaBancaria {
             break;
 	    }
 	    
-	}   
+	}
+	    
+	    
  }
 	
