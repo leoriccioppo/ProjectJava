@@ -26,9 +26,11 @@ public class InverteOrdem {
         //método da biblioteca arrays
         Arrays.sort(ordemCrescente);
        shuffleArray(numerosSortidos);
+       descrescenteArray(ordemDecrescente);
      
         System.out.println("A ordem crescente dos números é:" + Arrays.toString(ordemCrescente));
-        System.out.println("A aleatória-7 dos números é:" + Arrays.toString(numerosSortidos));
+        System.out.println("A ordem decrescente dos números é:" + Arrays.toString(ordemDecrescente));
+        System.out.println("A ordem aleatória dos números é:" + Arrays.toString(numerosSortidos));
     }
 
     public static void shuffleArray(int[] array) {
@@ -37,6 +39,15 @@ public class InverteOrdem {
             int temp = array[i];
             array[i] = array[j];
             array[j] = temp;
+        }
+    }
+
+    public static void descrescenteArray (int [] array){
+        for(int i = 0; i < array.length / 2; i++){
+            int temp = array[i];
+            array[i] = array[array.length - 1 - i];
+            array[array.length - 1 - i] = temp;
+
         }
     }
     
