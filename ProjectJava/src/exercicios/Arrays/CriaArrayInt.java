@@ -2,7 +2,7 @@ package exercicios.Arrays;
 import java.util.Scanner;
 
 
-public class CriaArray {
+public class CriaArrayInt {
     static int[] numeros = new int[8];
     static Scanner input = new Scanner(System.in);
 

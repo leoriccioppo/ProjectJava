@@ -3,7 +3,7 @@ package exercicios.EstruturaRepeticao;
 public class Fibonacci {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		
 		int n = 15;
         int primeiroNumero = 0;
