@@ -17,6 +17,7 @@ public class MaiorValor {
             numeros[numero] = input.nextInt();
         }
 
+        //perrcore todos os numeros do array e verifica o maior 
         int maiorNumero = numeros[0];
          for(int numero : numeros){
             if (numero > maiorNumero){
