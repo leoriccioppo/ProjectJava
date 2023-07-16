@@ -1,8 +1,22 @@
 package exercicios.ToDoList;
 import java.util.Scanner;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Menu {
-    public static void main(String[] args) {
+
+    private Scanner input;
+    private boolean exit;
+    private List<Tarefa> listaTarefas;
+
+    public Menu() {
+        input = new Scanner(System.in);
+        exit = false;
+        listaTarefas = new ArrayList<>();
+    }
+
+    public void run() {
 
     Scanner input = new Scanner(System.in);
     boolean exit = false;
@@ -15,14 +29,14 @@ public class Menu {
          
          switch(opcao) {
      case 1:
-          System.out.println("Adicionar tarefa");
+          addTarefa();
         break;    
      case 2:
          System.out.println("Remover tarefa");
          break;
          
      case 3:
-         System.out.println("Listar tarefas");;
+         System.out.println("Listar tarefas");
          break;
      
      case 4:
@@ -37,4 +51,29 @@ public class Menu {
     } 
     input.close();
   }   
+
+  // Solicita informações da tarefa ao usuário
+  public void addTarefa(){
+    //descrição da tarefa
+    System.out.println("Digite a tarefa:");
+    input.nextLine();
+    String description = input.nextLine();
+
+    //dia de criação
+    System.out.println("Digite a data de criação da tarefa (formato: YYYY-MM-DD): ");
+    String dataCriacaoStr = input.nextLine();
+    LocalDate creationDate = LocalDate.parse(dataCriacaoStr);
+
+    //prazo
+    System.out.println("Digite a data de prazo da tarefa (formato: YYYY-MM-DD): ");
+    String dataPrazoStr = input.nextLine();
+    LocalDate deadline = LocalDate.parse(dataPrazoStr);
+
+    // Criar instância da tarefa
+    Tarefa tarefa = new Tarefa(description, creationDate, deadline);
+
+    //Adicionar tarefa
+    listaTarefas.add(tarefa);
+    System.out.println("Tarefa adicionada com sucesso!");
+  }
 }

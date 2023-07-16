@@ -1,10 +1,9 @@
 package exercicios.ToDoList;
-//import java.util.Scanner;
 import java.time.LocalDate;
 
 public class Tarefa {
 
-    //descrição da tarefa, data de criação, prazo, finalizada
+    //descrição da tarefa, data de criação, prazo, finalizada?
     private String description;
     private LocalDate creationDate;
     private LocalDate deadline;
@@ -44,7 +43,7 @@ public class Tarefa {
        this.deadline = deadline;
     }
 
-    //
+    //está finalizada?
     public boolean isCompleted(){
         return completed;
     }
@@ -52,11 +51,5 @@ public class Tarefa {
     public void markAsCompleted(){
        completed = true;
     }
-
-
-
-     public static void main(String[] args) {
-
-     }
        
 }
