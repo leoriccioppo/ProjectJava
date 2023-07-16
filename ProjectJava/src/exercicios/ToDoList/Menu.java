@@ -32,11 +32,11 @@ public class Menu {
           addTarefa();
         break;    
      case 2:
-         System.out.println("Remover tarefa");
+         removeTarefa();
          break;
          
      case 3:
-         System.out.println("Listar tarefas");
+         listTarefas();
          break;
      
      case 4:
@@ -75,5 +75,13 @@ public class Menu {
     //Adicionar tarefa
     listaTarefas.add(tarefa);
     System.out.println("Tarefa adicionada com sucesso!");
+  }
+
+  public void removeTarefa(){
+    System.out.println("Digite a tarefa:");
+  }
+
+  public void listTarefas(){
+    System.out.println("Listar tarefas");
   }
 }
