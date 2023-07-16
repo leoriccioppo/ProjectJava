@@ -12,6 +12,7 @@ public class Main {
         
             menu.printMenu();
             int opcao = input.nextInt();
+            System.out.println();
          
              
              switch(opcao) {

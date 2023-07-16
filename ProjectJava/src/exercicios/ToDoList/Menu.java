@@ -44,6 +44,7 @@ public class Menu {
       //Adicionar tarefa
       listaTarefas.add(tarefa);
       System.out.println("Tarefa adicionada com sucesso!");
+      System.out.println();
     }
 
     //Remover tarefa selecionada
@@ -68,6 +69,7 @@ public class Menu {
        }else{
         System.out.println("Número de tarefa inválido.");
       }
+      System.out.println();
     }
 
     //Listar todas as tarefas
@@ -81,6 +83,7 @@ public class Menu {
         System.out.println((i+1) + "- "+ tarefa.getDescription() + "  /Prazo de entrega:" + tarefa.getDeadLine());
       }
     }    
+    System.out.println();
    }
 
    //getters and setters
