@@ -23,7 +23,7 @@ public class Menu {
 
     while (!exit) {
     
-        System.out.println("Digite a operação desejada (1 \"Adicionar tarefa\", 2 \"Remover tarefa\", 3 \"Exibir Saldo\", 4 \"Sair\"): ");
+        printMenu();
         int opcao = input.nextInt();
      
          
@@ -52,6 +52,14 @@ public class Menu {
     input.close();
   }   
 
+  //printa menu na tela
+  public void printMenu(){
+    System.out.println("Digite a operação desejada:");
+    System.out.println("1-Adicionar tarefa");
+    System.out.println("2-Remover tarefa");
+    System.out.println("3-Listar tarefa");
+    System.out.println("4-Sair");
+  }
   // Solicita informações da tarefa ao usuário
   public void addTarefa(){
     //descrição da tarefa
@@ -78,10 +86,19 @@ public class Menu {
   }
 
   public void removeTarefa(){
-    System.out.println("Digite a tarefa:");
+    System.out.println("Tarefa removida");
   }
 
   public void listTarefas(){
-    System.out.println("Listar tarefas");
+    if (listaTarefas.isEmpty()){
+      System.out.println("Nenhuma tarefa na lista!");
+    } else{
+      System.out.println("Lista de tarefas:");
+      for(int i=0; i < listaTarefas.size(); i++){
+        Tarefa tarefa = listaTarefas.get(i);
+        System.out.println((i+1) + "- "+ tarefa.getDescription());
+      }
+    }
+    
   }
 }
