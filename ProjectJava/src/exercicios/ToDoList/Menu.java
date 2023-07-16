@@ -85,10 +85,33 @@ public class Menu {
     System.out.println("Tarefa adicionada com sucesso!");
   }
 
+  //Remover tarefa selecionada
   public void removeTarefa(){
+    System.out.println("Digite a tarefa que deseja remover:");
+    int numeroTarefa = input.nextInt();
+    
+    if(numeroTarefa >= 1 && numeroTarefa <= listaTarefas.size()){
+      Tarefa tarefa = listaTarefas.get(numeroTarefa - 1); // Obtenha a tarefa correspondente
+      System.out.println('"' + tarefa.getDescription() + '"');
+      System.out.println("Tem certeza que deseja remover tarefa? (S/N)");
+      input.nextLine();
+      String confirmacao = input.nextLine();
+
+      if (confirmacao.equalsIgnoreCase("S")) {
+        listaTarefas.remove(tarefa);
+        System.out.println("Tarefa removida com sucesso!");
+    } else {
+      System.out.println("Remoção cancelada.");
+    }
+  }
+  else{
+    System.out.println("Número de tarefa inválido.");
+  }
+
     System.out.println("Tarefa removida");
   }
 
+  //Listar todas as tarefas
   public void listTarefas(){
     if (listaTarefas.isEmpty()){
       System.out.println("Nenhuma tarefa na lista!");
