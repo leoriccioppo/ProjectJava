@@ -2,6 +2,7 @@ package exercicios.ToDoList;
 import java.util.Scanner;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Menu {
@@ -77,14 +78,63 @@ public class Menu {
     if (listaTarefas.isEmpty()){
       System.out.println("Nenhuma tarefa na lista!");
     } else{
-      System.out.println("Lista de tarefas:");
-      for(int i=0; i < listaTarefas.size(); i++){
-        Tarefa tarefa = listaTarefas.get(i);
-        System.out.println((i+1) + "- "+ tarefa.getDescription() + "  /Prazo de entrega:" + tarefa.getDeadLine());
+      System.out.println("Prefere exibi-las em que ordem?");
+      System.out.println("1-Ordem de criação");
+      System.out.println("2-Alfabética");
+      System.out.println("3-Data de prazo");
+      int opcao = input.nextInt();
+
+      switch(opcao) {
+        case 1:
+        listaTarefasOrdemAdicionadas();
+        break;
+
+        case 2:
+        listTarefasAlfabeto();
+        break;
+
+        case 3:
+        listTarefasDataPrazo();
+        break;
+
+        default:
+        System.out.println("Operação inválida.");
+        break;
+
       }
     }    
     System.out.println();
    }
+
+   public void listaTarefasOrdemAdicionadas(){
+    System.out.println("Lista de tarefas em ordem de criação:");
+      for(int i=0; i < listaTarefas.size(); i++){
+        Tarefa tarefa = listaTarefas.get(i);
+        System.out.println((i+1) + "- "+ tarefa.getDescription() + "  /Prazo de entrega:" + tarefa.getDeadLine());
+      }
+   }
+
+   public void listTarefasAlfabeto(){
+     List<Tarefa> tarefasOrdenadas = new ArrayList<>(listaTarefas);
+        tarefasOrdenadas.sort(Comparator.comparing(Tarefa::getDescription));
+
+        System.out.println("Lista de tarefas em ordem alfabética:");
+        for (int i = 0; i < tarefasOrdenadas.size(); i++) {
+            Tarefa tarefa = tarefasOrdenadas.get(i);
+            System.out.println((i + 1) + "- " + tarefa.getDescription());
+          }
+    }
+
+   public void listTarefasDataPrazo(){
+    List<Tarefa> tarefasOrdenadas = new ArrayList<>(listaTarefas);
+        tarefasOrdenadas.sort(Comparator.comparing(Tarefa::getDeadLine));
+
+        System.out.println("Lista de tarefas por ordem de prazo:");
+        for (int i = 0; i < tarefasOrdenadas.size(); i++) {
+            Tarefa tarefa = tarefasOrdenadas.get(i);
+            System.out.println((i + 1) + "- " + tarefa.getDescription());
+       }
+    }
 
    //getters and setters
     public List<Tarefa> getListaTarefas() {
