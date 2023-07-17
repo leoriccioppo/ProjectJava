@@ -78,7 +78,7 @@ public class Menu {
 
     //Listar todas as tarefas
     public void listTarefas(){
-    if (listaTarefas.isEmpty() || listaTarefasConcluidas.isEmpty()){
+    if (listaTarefas.isEmpty() && listaTarefasConcluidas.isEmpty()){
       System.out.println("Nenhuma tarefa na lista!");
     } else{
       System.out.println("Prefere exibi-las em que ordem?");
@@ -146,18 +146,25 @@ public class Menu {
     }
 
     public void listTarefasConcluidas(){
+      if(listaTarefasConcluidas.isEmpty()){
+        System.out.println("Nenhuma tarefa na lista!");
+      }else{
         System.out.println("Tarefas concluídas:");
         for(int i = 0; i < listaTarefasConcluidas.size(); i++){
           Tarefa tarefa = listaTarefasConcluidas.get(i);
           System.out.println((i+1) + "- " + tarefa.getDescription());
         }
-
+      }
     }
     
 
     //marcar como concluída
     public void markTarefaConcluida(){
       System.out.println("Digite o número da tarefa que deseja marcar como concluída:");
+      for(int i=0; i < listaTarefas.size(); i++){
+        Tarefa tarefa = listaTarefas.get(i);
+        System.out.println((i+1) + "- "+ tarefa.getDescription());
+      }
       int numeroTarefa = input.nextInt();
 
       if(numeroTarefa>= 1 && numeroTarefa <= listaTarefas.size()){
