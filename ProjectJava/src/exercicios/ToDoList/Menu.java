@@ -121,7 +121,7 @@ public class Menu {
         System.out.println("Lista de tarefas em ordem alfabética:");
         for (int i = 0; i < tarefasOrdenadas.size(); i++) {
             Tarefa tarefa = tarefasOrdenadas.get(i);
-            System.out.println((i + 1) + "- " + tarefa.getDescription());
+            System.out.println((i + 1) + "- " + tarefa.getDescription() + "  /Prazo de entrega:" + tarefa.getDeadLine());
           }
     }
 
@@ -132,7 +132,7 @@ public class Menu {
         System.out.println("Lista de tarefas por ordem de prazo:");
         for (int i = 0; i < tarefasOrdenadas.size(); i++) {
             Tarefa tarefa = tarefasOrdenadas.get(i);
-            System.out.println((i + 1) + "- " + tarefa.getDescription());
+            System.out.println((i + 1) + "- " + tarefa.getDescription() + "  /Prazo de entrega:" + tarefa.getDeadLine());
        }
     }
 
