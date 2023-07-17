@@ -26,10 +26,14 @@ public class Main {
          case 3:
              menu.listTarefas();
              break;
-         
+        
          case 4:
+             menu.markTarefaConcluida();
+             break;
+         
+         case 5:
              exit = true;
-             System.out.println("Sair.");
+             System.out.println("Até a próxima.");
              break;
          
          default:

@@ -9,10 +9,12 @@ public class Menu {
 
     private Scanner input;
     private List<Tarefa> listaTarefas;
+    private List<Tarefa> listaTarefasConcluidas;
 
     public Menu() {
         input = new Scanner(System.in);
         listaTarefas = new ArrayList<>();
+        listaTarefasConcluidas = new ArrayList<>();
     }
  
     //printa menu na tela
@@ -21,7 +23,8 @@ public class Menu {
       System.out.println("1-Adicionar tarefa");
       System.out.println("2-Remover tarefa");
       System.out.println("3-Listar tarefa");
-      System.out.println("4-Sair");
+      System.out.println("4-Concluir tarefa");
+      System.out.println("5-Sair");
     }
     // Solicita informações da tarefa ao usuário
     public void addTarefa(){
@@ -75,14 +78,16 @@ public class Menu {
 
     //Listar todas as tarefas
     public void listTarefas(){
-    if (listaTarefas.isEmpty()){
+    if (listaTarefas.isEmpty() || listaTarefasConcluidas.isEmpty()){
       System.out.println("Nenhuma tarefa na lista!");
     } else{
       System.out.println("Prefere exibi-las em que ordem?");
       System.out.println("1-Ordem de criação");
       System.out.println("2-Alfabética");
       System.out.println("3-Data de prazo");
+      System.out.println("4-Tarefas concluídas");
       int opcao = input.nextInt();
+      System.out.println();
 
       switch(opcao) {
         case 1:
@@ -97,6 +102,10 @@ public class Menu {
         listTarefasDataPrazo();
         break;
 
+        case 4:
+        listTarefasConcluidas();
+        break;
+
         default:
         System.out.println("Operação inválida.");
         break;
@@ -106,7 +115,7 @@ public class Menu {
     System.out.println();
    }
 
-   public void listaTarefasOrdemAdicionadas(){
+    public void listaTarefasOrdemAdicionadas(){
     System.out.println("Lista de tarefas em ordem de criação:");
       for(int i=0; i < listaTarefas.size(); i++){
         Tarefa tarefa = listaTarefas.get(i);
@@ -114,7 +123,7 @@ public class Menu {
       }
    }
 
-   public void listTarefasAlfabeto(){
+    public void listTarefasAlfabeto(){
      List<Tarefa> tarefasOrdenadas = new ArrayList<>(listaTarefas);
         tarefasOrdenadas.sort(Comparator.comparing(Tarefa::getDescription));
 
@@ -125,7 +134,7 @@ public class Menu {
           }
     }
 
-   public void listTarefasDataPrazo(){
+    public void listTarefasDataPrazo(){
     List<Tarefa> tarefasOrdenadas = new ArrayList<>(listaTarefas);
         tarefasOrdenadas.sort(Comparator.comparing(Tarefa::getDeadLine));
 
@@ -136,12 +145,40 @@ public class Menu {
        }
     }
 
-   //getters and setters
+    public void listTarefasConcluidas(){
+        System.out.println("Tarefas concluídas:");
+        for(int i = 0; i < listaTarefasConcluidas.size(); i++){
+          Tarefa tarefa = listaTarefasConcluidas.get(i);
+          System.out.println((i+1) + "- " + tarefa.getDescription());
+        }
+
+    }
+    
+
+    //marcar como concluída
+    public void markTarefaConcluida(){
+      System.out.println("Digite o número da tarefa que deseja marcar como concluída:");
+      int numeroTarefa = input.nextInt();
+
+      if(numeroTarefa>= 1 && numeroTarefa <= listaTarefas.size()){
+        Tarefa tarefa = listaTarefas.get(numeroTarefa - 1);
+        tarefa.markAsCompleted();
+        listaTarefasConcluidas.add(tarefa);
+        listaTarefas.remove(tarefa);
+        System.out.println("Tarefa marcada como concluída!");
+        System.out.println();
+      }else{
+        System.out.println("Número de tarefa inválido.");
+      }
+
+    }
+
+    //getters and setters
     public List<Tarefa> getListaTarefas() {
       return listaTarefas;
    }
 
-   public void setListaTarefas(List<Tarefa> listaTarefas) {
+    public void setListaTarefas(List<Tarefa> listaTarefas) {
       this.listaTarefas = listaTarefas;
    }
 }
