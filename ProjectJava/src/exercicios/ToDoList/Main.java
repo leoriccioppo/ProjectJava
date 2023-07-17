@@ -33,7 +33,7 @@ public class Main {
          
          case 5:
              exit = true;
-             System.out.println("Até a próxima1.");
+             System.out.println("Até a próxima!");
              break;
          
          default:
