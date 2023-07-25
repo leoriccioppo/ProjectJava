@@ -16,4 +16,4 @@ settings.json
 Thumbs.db
 
 # "bin" geralmente é usada para armazenar os arquivos binários compilados
-/bin/
+ProjectJava/bin
