@@ -1,1 +1,19 @@
-/.metadata/
+# Arquivos e pastas do Eclipse
+.metadata/
+.project
+.classpath
+.settings/
+
+# Arquivos e pastas do Visual Studio Code
+.vscode/
+launch.json
+settings.json
+
+# Arquivos específicos do macOS
+.DS_Store
+
+# Arquivos específicos do Windows
+Thumbs.db
+
+#"bin" geralmente é usada para armazenar os arquivos binários compilados
+/bin/
