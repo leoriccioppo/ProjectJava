@@ -6,4 +6,18 @@ public class LivroFisico extends Livro{
     }
     private double peso;
     private double precoFrete;
+
+    //getters and setters
+    public double getPeso() {
+        return peso;
+    }
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+    public double getPrecoFrete() {
+        return precoFrete;
+    }
+    public void setPrecoFrete(double precoFrete) {
+        this.precoFrete = precoFrete;
+    }
 }

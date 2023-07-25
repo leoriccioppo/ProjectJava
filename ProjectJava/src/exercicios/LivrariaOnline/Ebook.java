@@ -6,5 +6,15 @@ public class Ebook extends Livro{
     }
 
     private double tamanhoEmMb;
+
+
+    //getters and setters
+    public double getTamanhoEmMb() {
+        return tamanhoEmMb;
+    }
+
+    public void setTamanhoEmMb(double tamanhoEmMb) {
+        this.tamanhoEmMb = tamanhoEmMb;
+    }
     
 }
