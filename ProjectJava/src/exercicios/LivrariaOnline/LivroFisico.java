@@ -1,11 +1,16 @@
 package exercicios.LivrariaOnline;
 
 public class LivroFisico extends Livro{
-    public LivroFisico(String title, String author, String isbn, double price) {
-        super(title, author, isbn, price);
-    }
+    
     private double peso;
     private double precoFrete;
+
+    public LivroFisico(String title, String author, String isbn, double price, double peso, double precoFrete) {
+        super(title, author, isbn, price);
+
+        this.peso = peso;
+        this.precoFrete = precoFrete;
+    }
 
     //getters and setters
     public double getPeso() {

@@ -1,11 +1,15 @@
 package exercicios.LivrariaOnline;
 
 public class Ebook extends Livro{
-    public Ebook(String title, String author, String isbn, double price) {
+   
+    private double tamanhoEmMb;
+
+     public Ebook(String title, String author, String isbn, double price, double tamanhoEmMdb) {
         super(title, author, isbn, price);
+
+        this.tamanhoEmMb = tamanhoEmMdb;
     }
 
-    private double tamanhoEmMb;
 
 
     //getters and setters
