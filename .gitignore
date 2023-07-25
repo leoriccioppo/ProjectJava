@@ -15,5 +15,5 @@ settings.json
 # Arquivos específicos do Windows
 Thumbs.db
 
-#"bin" geralmente é usada para armazenar os arquivos binários compilados
+# "bin" geralmente é usada para armazenar os arquivos binários compilados
 /bin/
