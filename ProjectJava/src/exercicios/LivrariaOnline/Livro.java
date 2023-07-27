@@ -16,8 +16,22 @@ public class Livro {
 
     }
 
+    //calcular preco total, incluindo frete
+    public double calcularPrecoTotal(Livro precoComFrete){
+
+        //verifica se é um livro fisico e calcula frete
+        if(precoComFrete instanceof LivroFisico){
+           LivroFisico livroFisico = (LivroFisico) precoComFrete;
+            return livroFisico.getPrice() + livroFisico.getPrecoFrete();
+
+        }else{
+
+            return precoComFrete.getPrice();
+
+        }
+    }
+
     //getters and setters
-    // Métodos getters e setters
     public String getTitle() {
         return title;
     }
