@@ -1,4 +1,4 @@
-package exercicios.LivrariaOnline;
+package exercicios.LivrariaOnline.livro;
 
 public class LivroFisico extends Livro{
     
