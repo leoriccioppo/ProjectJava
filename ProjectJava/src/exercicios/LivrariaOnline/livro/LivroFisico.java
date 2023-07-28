@@ -25,4 +25,9 @@ public class LivroFisico extends Livro{
     public void setPrecoFrete(double precoFrete) {
         this.precoFrete = precoFrete;
     }
+
+    @Override
+    public double calcularPrecoTotal(){
+        return super.calcularPrecoTotal() + getPrecoFrete();
+    }
 }

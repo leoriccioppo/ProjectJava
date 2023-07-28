@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import exercicios.LivrariaOnline.livro.Livro;
 
 public class ManipulaçãoLivros {
-     private ArrayList<Livro> livros;
+     public ArrayList<Livro> livros;
 
      public ManipulaçãoLivros(ArrayList<Livro> livros){
         this.livros = livros;

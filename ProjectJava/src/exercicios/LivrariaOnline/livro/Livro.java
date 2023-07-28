@@ -17,19 +17,25 @@ public class Livro {
     }
 
     //calcular preco total, incluindo frete
-    public double calcularPrecoTotal(Livro precoComFrete){
+
+    public double calcularPrecoTotal(){
+        return price;
+    }
+
+
+    //public double calcularPrecoTotal(Livro precoComFrete){
 
         //verifica se é um livro fisico e calcula frete
-        if(precoComFrete instanceof LivroFisico){
-           LivroFisico livroFisico = (LivroFisico) precoComFrete;
-            return livroFisico.getPrice() + livroFisico.getPrecoFrete();
+//        if(precoComFrete instanceof LivroFisico){
+  //         LivroFisico livroFisico = (LivroFisico) precoComFrete;
+    //        return livroFisico.getPrice() + livroFisico.getPrecoFrete();
 
-        }else{
+      //  }else{
 
-            return precoComFrete.getPrice();
+        //    return precoComFrete.getPrice();
 
-        }
-    }
+        //}
+    //}
 
     //getters and setters
     public String getTitle() {
