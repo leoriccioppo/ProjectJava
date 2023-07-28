@@ -1,12 +1,13 @@
 package exercicios.LivrariaOnline.manipulacao;
-
+import java.util.ArrayList;
+import exercicios.LivrariaOnline.livro.Livro;
 import exercicios.LivrariaOnline.livro.Ebook;
 import exercicios.LivrariaOnline.livro.LivroFisico;
 
 public class Estoque extends ManipulaçãoLivros {
 
-    public Estoque() {
-        super();
+    public Estoque(ArrayList<Livro> livrosEstoque) {
+        super(livrosEstoque);
 
         livrosIniciais();
     
@@ -25,5 +26,5 @@ public class Estoque extends ManipulaçãoLivros {
         adicionarLivro(livroFisico3);
         adicionarLivro(livroEbook2);
     }
-    
+
 }

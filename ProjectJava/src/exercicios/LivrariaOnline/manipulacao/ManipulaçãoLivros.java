@@ -6,8 +6,8 @@ import exercicios.LivrariaOnline.livro.Livro;
 public class ManipulaçãoLivros {
      private ArrayList<Livro> livros;
 
-     public ManipulaçãoLivros(){
-        livros = new ArrayList<>();
+     public ManipulaçãoLivros(ArrayList<Livro> livros){
+        this.livros = livros;
      }
 
     // Método para adicionar um livro
