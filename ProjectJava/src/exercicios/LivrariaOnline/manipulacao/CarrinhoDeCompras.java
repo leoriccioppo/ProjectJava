@@ -1,5 +1,5 @@
 package exercicios.LivrariaOnline.manipulacao;
 
-public class CarrinhoDeCompras {
+public class CarrinhoDeCompras extends ManipulaçãoLivros{
     
 }

@@ -1,7 +1,6 @@
 package exercicios.LivrariaOnline.manipulacao;
 
 import exercicios.LivrariaOnline.livro.Ebook;
-import exercicios.LivrariaOnline.livro.Livro;
 import exercicios.LivrariaOnline.livro.LivroFisico;
 
 public class Estoque extends ManipulaçãoLivros {
