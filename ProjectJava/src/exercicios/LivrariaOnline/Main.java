@@ -33,7 +33,22 @@ public class Main {
                 System.out.println("Digite o livro que deseja adicionar:");
                 String title = input.nextLine();
 
+                Livro livroSelecionado = null;
+
+                for(Livro livro : estoque.getLivros()){
+
+                    if (livro.getTitle().equalsIgnoreCase(title)){
+                    livroSelecionado = livro;
+                    break;
+                 }
+                } 
                 
+                if(livroSelecionado != null){
+                    carrinho.adicionarLivro(livroSelecionado);
+                    System.out.println("Livro \"" + title + "\" adicionado ao carrinho!");
+                } else{
+                    System.out.println("Livro não encontrado no estoque!");
+                }
             }
 
             else if(opcao == 3){
