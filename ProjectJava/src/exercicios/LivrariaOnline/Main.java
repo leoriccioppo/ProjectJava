@@ -1,22 +1,81 @@
 package exercicios.LivrariaOnline;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import exercicios.LivrariaOnline.livro.Livro;
 import exercicios.LivrariaOnline.manipulacao.CarrinhoDeCompras;
+import exercicios.LivrariaOnline.manipulacao.Estoque;
 
 
 public class Main {
     public static void main(String[] args) {
-        CarrinhoDeCompras estoque = new CarrinhoDeCompras();
+        CarrinhoDeCompras carrinho = new CarrinhoDeCompras();
+        Estoque estoque = new Estoque();
+        Scanner input = new Scanner(System.in);
+        boolean exit = false;
 
-                // Exemplo: listar os livros disponíveis no estoque
-        ArrayList<Livro> livrosDisponiveis = estoque.getLivros();
-        System.out.println("Livros disponíveis no estoque:");
-        for (Livro livro : livrosDisponiveis) {
-            System.out.println(livro.getTitle() + " - " + livro.getPrice());
-        }
-        
+        while (!exit){
+            System.out.println();
+            PrintMenu();
+            int opcao = input.nextInt();
+            System.out.println();
+
+            if(opcao == 1){
+                //listar os livros disponíveis no estoque
+                ArrayList<Livro> livrosDisponiveis = estoque.getLivros();
+                System.out.println("Livros disponíveis no estoque:");
+                for (Livro livro : livrosDisponiveis) {
+                System.out.println(livro.getTitle() + " - " + livro.getPrice());
+            }
+
+            }else if(opcao == 2){
+                System.out.println("Digite o livro que deseja adicionar:");
+                String title = input.nextLine();
+
+                
+            }
+
+            else if(opcao == 3){
+                System.out.println("Remover livro do carrinho");
+
+            } else if(opcao == 4){
+                //listar os livros no carrinho
+                if(carrinho.getLivros().size() == 0){
+                    System.out.println("Nenhum livro no carrinho!");
+                }else{
+                    System.out.println("Listar livros no carrinho");
+                    for (Livro livro : carrinho.getLivros()) {
+                    System.out.println(livro.getTitle() + " - " + livro.getPrice());
+                 }
+                }
+            }
+            else if(opcao == 5){
+                System.out.println("Concluir compra");
+
+            }
+            else if(opcao == 6){
+             exit = true;
+             System.out.println("Até a próxima!");
+
+            }else{
+
+            }
+   
+        }      
+        input.close();
  }
+
+
+ public static void PrintMenu(){
+    System.out.println("O que gostaria de fazer:");
+    System.out.println("1-Listar livros disponíveis no estoque");
+    System.out.println("2-Adicionar livro ao carrinho");
+    System.out.println("3-Remover livro do carrinho");
+    System.out.println("4-Listar livros no carrinho");
+    System.out.println("5-Concluir compra");
+    System.out.println("6-Cancelar e sair");
+ }
+
 }
 
