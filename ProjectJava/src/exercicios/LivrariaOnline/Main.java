@@ -19,7 +19,6 @@ public class Main {
             System.out.println();
             PrintMenu();
             int opcao = input.nextInt();
-            input.nextLine();
 
             System.out.println();
 
@@ -34,6 +33,7 @@ public class Main {
 
             }else if(opcao == 2){
                 System.out.println("Digite o livro que deseja adicionar:");
+                input.nextLine();
                 String title = input.nextLine();
 
                 Livro livroSelecionado = null;
@@ -56,6 +56,7 @@ public class Main {
 
             else if(opcao == 3){
                 System.out.println("Digite o livro que deseja remover:");
+                 input.nextLine();
                  String title = input.nextLine();
                  Livro livroSelecionado = null;
 
@@ -90,23 +91,24 @@ public class Main {
             }
             else if(opcao == 5){
                 double total = carrinho.calcularTotal();
-                if (total == 0.0) {
-                    System.out.println("O carrinho está vazio. Nenhuma compra realizada.");
-                } else {
-                    System.out.println("O valor total da compra é: " + total);
-                    System.out.println("Deseja concluir a compra? (Digite 'S' para sim ou 'N' para não): ");
-                    String resposta = input.nextLine();
+            if (total == 0.0) {
+                System.out.println("O carrinho está vazio. Nenhuma compra realizada.");
+            } else {
+                System.out.println("O valor total da compra é: " + total);
+                System.out.println("Deseja concluir a compra? (Digite 'S' para sim ou 'N' para não): ");
+                input.nextLine();
+                String resposta = input.nextLine();
 
-                    if (resposta.equalsIgnoreCase("S")) {
-                        System.out.println("Compra concluída! Itens comprados:");
-                        for (Livro livro : carrinho.getLivros()) {
-                            System.out.println(livro.getTitle() + " - " + livro.getPrice());
-                        }
-                        carrinho.limparCarrinho();
-                    } else {
-                        System.out.println("Compra cancelada. Voltando para o menu principal.");
+                if (resposta.equalsIgnoreCase("S")) {
+                    System.out.println("Compra concluída! Itens comprados:");
+                    for (Livro livro : carrinho.getLivros()) {
+                        System.out.println(livro.getTitle() + " - " + livro.getPrice());
                     }
+                    carrinho.limparCarrinho();
+                } else {
+                    System.out.println("Compra cancelada. Voltando para o menu principal.");
                 }
+            }
             }else if(opcao == 6){
              exit = true;
              System.out.println("Até a próxima!");
