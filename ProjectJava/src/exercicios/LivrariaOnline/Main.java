@@ -91,22 +91,22 @@ public class Main {
             else if(opcao == 5){
                 double total = carrinho.calcularTotal();
                 if (total == 0.0) {
-                System.out.println("O carrinho está vazio. Nenhuma compra realizada.");
-            } else{
-                System.out.println("O valor total da compra é: " + total);
-                System.out.println("Deseja concluir a compra? (Digite 'S' para sim ou 'N' para não): ");
-                String resposta = input.nextLine();
-            }
+                    System.out.println("O carrinho está vazio. Nenhuma compra realizada.");
+                } else {
+                    System.out.println("O valor total da compra é: " + total);
+                    System.out.println("Deseja concluir a compra? (Digite 'S' para sim ou 'N' para não): ");
+                    String resposta = input.nextLine();
 
-            if (resposta.equalsIgnoreCase("S")) {
-                System.out.println("Compra concluída! Itens comprados:");
-                for (Livro livro : carrinho.getLivros()) {
-                    System.out.println(livro.getTitle() + " - " + livro.getPrice());
+                    if (resposta.equalsIgnoreCase("S")) {
+                        System.out.println("Compra concluída! Itens comprados:");
+                        for (Livro livro : carrinho.getLivros()) {
+                            System.out.println(livro.getTitle() + " - " + livro.getPrice());
+                        }
+                        carrinho.limparCarrinho();
+                    } else {
+                        System.out.println("Compra cancelada. Voltando para o menu principal.");
+                    }
                 }
-            } else {
-                System.out.println("Compra cancelada. Voltando para o menu principal.");
-            }
-
             }else if(opcao == 6){
              exit = true;
              System.out.println("Até a próxima!");

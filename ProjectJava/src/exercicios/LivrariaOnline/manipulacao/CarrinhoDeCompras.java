@@ -19,4 +19,8 @@ public class CarrinhoDeCompras extends ManipulaçãoLivros{
         }
         return total;
     }
+
+    public void limparCarrinho() {
+        livros.clear();
+    }
 }
