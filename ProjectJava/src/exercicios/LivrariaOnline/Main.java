@@ -103,6 +103,9 @@ public class Main {
                 for (Livro livro : carrinho.getLivros()) {
                     System.out.println(livro.getTitle() + " - " + livro.getPrice());
                 }
+            } else {
+                System.out.println("Compra cancelada. Voltando para o menu principal.");
+            }
 
             }else if(opcao == 6){
              exit = true;
