@@ -19,7 +19,10 @@ public class Main {
             System.out.println();
             PrintMenu();
             int opcao = input.nextInt();
+            input.nextLine();
+
             System.out.println();
+
 
             if(opcao == 1){
                 //listar os livros disponíveis no estoque
@@ -52,7 +55,27 @@ public class Main {
             }
 
             else if(opcao == 3){
-                System.out.println("Remover livro do carrinho");
+                System.out.println("Digite o livro que deseja remover:");
+                 String title = input.nextLine();
+                 Livro livroSelecionado = null;
+
+                if (carrinho.getLivros().size() == 0){
+                    System.out.println("Nenhum livro no carrinho!");
+                } else{
+                     for(Livro livro : carrinho.getLivros()){
+                     if (livro.getTitle().equalsIgnoreCase(title)){
+                    livroSelecionado = livro;
+                    break;
+                  }
+              }
+
+               if(livroSelecionado != null){
+                carrinho.removerLivro(livroSelecionado);
+                System.out.println("Livro \"" + title + "\" removido do carrinho!");
+               }else{
+                System.out.println("Livro não encontrado no carrinho!");
+               }
+            }
 
             } else if(opcao == 4){
                 //listar os livros no carrinho
