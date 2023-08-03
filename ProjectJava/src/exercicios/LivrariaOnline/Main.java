@@ -89,10 +89,22 @@ public class Main {
                 }
             }
             else if(opcao == 5){
-                System.out.println("Concluir compra");
-
+                double total = carrinho.calcularTotal();
+                if (total == 0.0) {
+                System.out.println("O carrinho está vazio. Nenhuma compra realizada.");
+            } else{
+                System.out.println("O valor total da compra é: " + total);
+                System.out.println("Deseja concluir a compra? (Digite 'S' para sim ou 'N' para não): ");
+                String resposta = input.nextLine();
             }
-            else if(opcao == 6){
+
+            if (resposta.equalsIgnoreCase("S")) {
+                System.out.println("Compra concluída! Itens comprados:");
+                for (Livro livro : carrinho.getLivros()) {
+                    System.out.println(livro.getTitle() + " - " + livro.getPrice());
+                }
+
+            }else if(opcao == 6){
              exit = true;
              System.out.println("Até a próxima!");
 
